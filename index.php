@@ -1,12 +1,15 @@
-<?php require_once 'views/assets/header.php';
+<?php 
+session_start();
+require_once 'views/assets/header.php';
+require_once 'controllers/LoginController.php';
+$controlador = new LoginController();
 
 //Condicion para logearse
-    echo "<h1>Bienvenido<h1>";
 
-    require_once 'views/login.php';
-    if (isset($_POST['btningresar'])) {
-        require_once 'controllers/LoginController.php';
-        $validacion = new Logincontroller($_POST['user'], $_POST['pass']);
-        $session = $validacion->ValidacionLogin();
-    }
-   require_once 'views/assets/footer.php'; ?>
+if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
+    $controlador->Login();
+}elseif (isset($_SESSION['logeado'])) {
+    echo "Bienvenido";
+}
+
+require_once 'views/assets/footer.php'; ?>
