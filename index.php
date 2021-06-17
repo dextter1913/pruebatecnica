@@ -5,7 +5,6 @@ require_once 'controllers/LoginController/LoginController.php';
 $controlador = new LoginController();
 
 //Condicion para logearse
-
 if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
     $controlador->Login();
 } elseif (isset($_SESSION['logeado'])) {

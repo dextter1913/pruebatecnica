@@ -1,4 +1,5 @@
 <?php 
+require_once 'models/autoload.php';
 class FuncionesController  
 {
     public function nav(){
@@ -7,6 +8,14 @@ class FuncionesController
 
     public function IngresarActividades(){
         require_once 'views/frmCrearActividad/frmCrearActividad.php';
+        if (isset($_POST['btnIngresarActividad'])) {
+            $ingresar = new IngresarActividad($_POST['actividad']);
+            $ingresar->InsertActividad();
+        }
+    }
+
+    public function MostrarActividades(){
+        
     }
 }
 
