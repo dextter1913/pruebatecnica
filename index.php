@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require_once 'views/assets/header.php';
 require_once 'controllers/LoginController/LoginController.php';
@@ -8,8 +8,25 @@ $controlador = new LoginController();
 
 if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
     $controlador->Login();
-}elseif (isset($_SESSION['logeado'])) {
-    echo "Bienvenido";
+} elseif (isset($_SESSION['logeado'])) {
+    require_once 'controllers/FuncionesController/FuncionesController.php';
+    $nav = new FuncionesController();
+    $nav->nav();
+    if (isset($_GET['modulos'])) {
+        switch ($_GET['modulos']) {
+            case 'inicio':
+                echo "Inicio";
+                break;
+            case 'registro':
+                echo "Registro";
+                break;
+            default:
+                echo "Modulo no disponible";
+                break;
+        }
+    }else {
+        echo "Modulo no disponible";
+    }
 }
 
-require_once 'views/assets/footer.php'; ?>
+require_once 'views/assets/footer.php';
