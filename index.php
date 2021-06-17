@@ -10,8 +10,8 @@ if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
     $controlador->Login();
 } elseif (isset($_SESSION['logeado'])) {
     require_once 'controllers/FuncionesController/FuncionesController.php';
-    $nav = new FuncionesController();
-    $nav->nav();
+    $funciones = new FuncionesController();
+    $funciones->nav();
     if (isset($_GET['modulos'])) {
         switch ($_GET['modulos']) {
             case 'ver':
@@ -19,6 +19,7 @@ if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
                 break;
             case 'crear':
                 echo "Crear";
+                $funciones->IngresarActividades();
                 break;
             default:
                 echo "Modulo no disponible";
