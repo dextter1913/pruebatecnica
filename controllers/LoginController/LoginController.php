@@ -4,7 +4,7 @@ class LoginController
 {
     public function Login()
     {
-        require_once 'views/login.php';
+        require_once 'views/login/login.php';
         if (isset($_POST['btningresar'])) {
             $validacion = new ValidacionLogin($_POST['user'], $_POST['pass']);
             if ($validacion->ConsultaUsuario()) {

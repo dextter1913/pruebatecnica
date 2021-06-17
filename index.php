@@ -1,7 +1,7 @@
 <?php 
 session_start();
 require_once 'views/assets/header.php';
-require_once 'controllers/LoginController.php';
+require_once 'controllers/LoginController/LoginController.php';
 $controlador = new LoginController();
 
 //Condicion para logearse
