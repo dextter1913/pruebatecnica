@@ -14,8 +14,8 @@ class FuncionesController
         }
     }
 
-    public function MostrarActividades(){
-        
+    public function VerActividades(){
+        require_once 'views/tblActividades/tblActividades.php';
     }
 }
 

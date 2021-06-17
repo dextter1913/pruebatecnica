@@ -15,6 +15,7 @@ if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
         switch ($_GET['modulos']) {
             case 'ver':
                 echo "Ver";
+                $funciones->VerActividades();
                 break;
             case 'crear':
                 echo "Crear";
