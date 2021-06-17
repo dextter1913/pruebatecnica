@@ -14,11 +14,11 @@ if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
     $nav->nav();
     if (isset($_GET['modulos'])) {
         switch ($_GET['modulos']) {
-            case 'inicio':
-                echo "Inicio";
+            case 'ver':
+                echo "Ver";
                 break;
-            case 'registro':
-                echo "Registro";
+            case 'crear':
+                echo "Crear";
                 break;
             default:
                 echo "Modulo no disponible";
