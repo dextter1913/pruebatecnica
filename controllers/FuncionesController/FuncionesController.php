@@ -15,7 +15,10 @@ class FuncionesController
     }
 
     public function VerActividades(){
+        $consulta = new MostrarActividad();
+        $resultado = $consulta->Consulta();
         require_once 'views/tblActividades/tblActividades.php';
+
     }
 }
 
