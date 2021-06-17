@@ -5,6 +5,7 @@ CREATE TABLE Usuarios(
     user VARCHAR (50) PRIMARY KEY NOT NULL,
     pass VARCHAR (50) NOT NULL
 );
+INSERT INTO Usuarios(user, pass) VALUES('admin','123');
 CREATE TABLE empleados(
     doc VARCHAR (50) PRIMARY KEY,
     nombre VARCHAR (50) NOT NULL,
@@ -14,6 +15,7 @@ CREATE TABLE empleados(
     INDEX(user),
     FOREIGN KEY empleado(user) REFERENCES Usuarios(user)
 );
+INSERT INTO empleados(doc, nombre, apellido, telefono, user) VALUES('1035391050','Cristian','Aguirre','3166857000','admin');
 CREATE TABLE actividades(
     idActividad INT AUTO_INCREMENT PRIMARY KEY,
     descripcionActividad TEXT NOT NULL
