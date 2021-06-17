@@ -21,11 +21,14 @@ if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
                 echo "Crear";
                 $funciones->IngresarActividades();
                 break;
+            case 'tiempos':
+                echo "tiempos";
+                break;
             default:
                 echo "Modulo no disponible";
                 break;
         }
-    }else {
+    } else {
         echo "Modulo no disponible";
     }
 }

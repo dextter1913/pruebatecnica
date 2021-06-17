@@ -12,6 +12,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="?modulos=crear">Crear</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?modulos=tiempos">Tiempos</a>
+                </li>
             </ul>
         </div>
     </div>
