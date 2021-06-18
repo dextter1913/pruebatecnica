@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS Actividades;
 CREATE DATABASE IF NOT EXISTS Actividades;
 
 USE Actividades;
@@ -18,6 +19,7 @@ CREATE TABLE empleados(
 INSERT INTO empleados(doc, nombre, apellido, telefono, user) VALUES('1035391050','Cristian','Aguirre','3166857000','admin');
 CREATE TABLE actividades(
     idActividad INT AUTO_INCREMENT PRIMARY KEY,
+    NombreActividad VARCHAR (50) NOT NULL,
     descripcionActividad TEXT NOT NULL
 );
 CREATE TABLE tiempos(

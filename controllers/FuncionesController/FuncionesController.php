@@ -9,7 +9,7 @@ class FuncionesController
     public function IngresarActividadesController(){
         require_once 'views/frmCrearActividad/frmCrearActividad.php';
         if (isset($_POST['btnIngresarActividad'])) {
-            $ingresar = new IngresarActividad($_POST['actividad']);
+            $ingresar = new IngresarActividad($_POST['nombreactividad'], $_POST['actividad']);
             $ingresar->InsertActividad();
             require_once 'views/tblActividades/mensaje.php';
         }

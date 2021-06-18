@@ -6,6 +6,7 @@
                     <tr>
                         <th>Seleccionar</th>
                         <th>ID</th>
+                        <th>Nombre</th>
                         <th>Actividad</th>
                     </tr>
                 </thead>
@@ -20,6 +21,9 @@
                                 </td>
                                 <td>
                                     <?= $row['idActividad'] ?>
+                                </td>
+                                <td>
+                                    <?= $row['NombreActividad'] ?>
                                 </td>
                                 <td>
                                     <?= $row['descripcionActividad'] ?>
