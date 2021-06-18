@@ -48,7 +48,6 @@
 </div>
 
 
-
 <?php
-
+var_dump($mensaje);
 ?>

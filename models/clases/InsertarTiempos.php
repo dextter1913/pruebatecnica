@@ -35,7 +35,8 @@ class InsertarTiempos
                 $conexion->EstablecerConexion()->query("INSERT INTO tiempos(fecTiempos, cantHoras, user, idActividad) VALUES('$fecTiempos','$cantHoras','$user','$idActividad')");
             }
         }else {
-            return 'Superaste las 8 horas del dia';
+            $mensaje = 'ya no puede marcar mas de 8 horas';
+            return $mensaje;
         }
 
             
