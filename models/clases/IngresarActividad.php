@@ -5,16 +5,16 @@ require_once 'conexionDB.php';
         private $nombreactividad;
         private $actividad;
 
-        public function __construct($actividad, $nombreactividad) {
-            $this->actividad = $actividad;
+        public function __construct($nombreactividad, $actividad) {
             $this->nombreactividad = $nombreactividad;
+            $this->actividad = $actividad;
         }
 
         public function InsertActividad(){
             $conexion = new conexionDB();
             $actividad = $this->actividad;
             $nombreactividad = $this->nombreactividad;
-            $conexion->EstablecerConexion()->query("INSERT INTO actividades(descripcionActividad) VALUES('$nombreactividad','$actividad')");
+            $conexion->EstablecerConexion()->query("INSERT INTO actividades(NombreActividad, descripcionActividad) VALUES('$nombreactividad','$actividad')");
         }
     }
     
