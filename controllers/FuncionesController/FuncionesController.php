@@ -6,7 +6,7 @@ class FuncionesController
         require_once 'views/nav/nav.php';
     }
 
-    public function IngresarActividades(){
+    public function IngresarActividadesController(){
         require_once 'views/frmCrearActividad/frmCrearActividad.php';
         if (isset($_POST['btnIngresarActividad'])) {
             $ingresar = new IngresarActividad($_POST['actividad']);
@@ -15,11 +15,15 @@ class FuncionesController
         }
     }
 
-    public function VerActividades(){
+    public function VerActividadesController(){
         $consulta = new MostrarActividad();
         $resultado = $consulta->Consulta();
         require_once 'views/tblActividades/tblActividades.php';
 
+    }
+
+    public function InsertarTiemposController(){
+        
     }
 }
 

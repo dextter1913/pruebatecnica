@@ -15,11 +15,11 @@ if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
         switch ($_GET['modulos']) {
             case 'ver':
                 echo "Ver";
-                $funciones->VerActividades();
+                $funciones->VerActividadesController();
                 break;
             case 'crear':
                 echo "Crear";
-                $funciones->IngresarActividades();
+                $funciones->IngresarActividadesController();
                 break;
             case 'tiempos':
                 echo "tiempos";
@@ -28,6 +28,7 @@ if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
                         echo $key;
                         echo $_POST['fecha'];
                         echo $_POST['horas'];
+                        echo $_SESSION['logeado'];
                     }
                 }
                 break;
