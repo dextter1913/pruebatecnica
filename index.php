@@ -24,11 +24,8 @@ if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
             case 'tiempos':
                 echo "tiempos";
                 if (isset($_POST['id'])) {
-                    foreach ($_POST['id'] as $key) {
-                        echo $key;
-                        echo $_POST['fecha'];
-                        echo $_POST['horas'];
-                        echo $_SESSION['logeado'];
+                    foreach ($_POST['id'] as $idActividad) {
+                        $funciones->InsertarTiemposController($_POST['fecha'], $_POST['horas'], $_SESSION['logeado'], $idActividad);
                     }
                 }
                 break;

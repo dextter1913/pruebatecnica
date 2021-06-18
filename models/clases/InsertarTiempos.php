@@ -14,7 +14,7 @@ class InsertarTiempos
         $this->idActividad = $idActividad;
     }
 
-    public function InsertarTiempos(){
+    public function InsertarTiemposModel(){
         $fecTiempos = $this->fecTiempos;
         $cantHoras = $this->cantHoras;
         $user = $this->user;

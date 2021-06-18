@@ -22,8 +22,9 @@ class FuncionesController
 
     }
 
-    public function InsertarTiemposController(){
-        
+    public function InsertarTiemposController($fecha, $horas, $user, $idActividad){
+        $insertarTiempos = new InsertarTiempos($fecha, $horas, $user, $idActividad);
+        $insertarTiempos->InsertarTiemposModel();
     }
 }
 
