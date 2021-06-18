@@ -10,6 +10,11 @@
         <input type="password" name="pass" id="pass" class="form-control"><br/>
         <input type="submit" value="Iniciar" name="btningresar" class="btn btn-outline-primary btn-sm">
         </form>
+        <?php 
+        if (isset($mensaje)) {
+            echo $mensaje;
+        }
+        ?>
         </div>
         <div class="col-12 col-sm-3 col-md-4 col-lg-4"></div>
     </div>

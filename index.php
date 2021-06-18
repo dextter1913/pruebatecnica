@@ -2,11 +2,11 @@
 session_start();
 require_once 'views/assets/header.php';
 require_once 'controllers/LoginController/LoginController.php';
-$controlador = new LoginController();
+$Login = new LoginController();
 
 //Condicion para logearse
 if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
-    $controlador->Login();
+    $Login->Login();
 } elseif (isset($_SESSION['logeado'])) {
     require_once 'controllers/FuncionesController/FuncionesController.php';
     $funciones = new FuncionesController();
@@ -31,6 +31,8 @@ if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
     } else {
         echo "Modulo no disponible";
     }
+}else {
+    $Login->Login();
 }
 
 require_once 'views/assets/footer.php';

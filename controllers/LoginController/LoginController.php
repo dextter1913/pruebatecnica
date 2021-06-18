@@ -11,6 +11,9 @@ class LoginController
                 $variable = $validacion->ConsultaUsuario()['user'];
                 session_start();
                 $_SESSION['logeado'] = $variable;
+                header('Location:index.php?modulos=ver');
+            }else {
+                require_once 'views/login/error.php';
             }
         }
     }
