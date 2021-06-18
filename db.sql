@@ -22,7 +22,7 @@ CREATE TABLE actividades(
 );
 CREATE TABLE tiempos(
     idtiempo INT AUTO_INCREMENT PRIMARY KEY,
-    fecActividad DATE NOT NULL,
+    fecTiempos DATE NOT NULL,
     cantHoras INT (3) NOT NULL,
     user VARCHAR (50) NOT NULL,
     idActividad INT NOT NULL,

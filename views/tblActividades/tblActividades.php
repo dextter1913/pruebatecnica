@@ -10,7 +10,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <form action="" method="get">
+                    <form action="index.php?modulos=tiempos" method="post">
                         <?php
                         while ($row = mysqli_fetch_assoc($resultado)) :
                         ?>

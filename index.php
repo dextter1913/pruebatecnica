@@ -23,6 +23,13 @@ if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
                 break;
             case 'tiempos':
                 echo "tiempos";
+                if (isset($_POST['id'])) {
+                    foreach ($_POST['id'] as $key) {
+                        echo $key;
+                        echo $_POST['fecha'];
+                        echo $_POST['horas'];
+                    }
+                }
                 break;
             default:
                 echo "Modulo no disponible";
