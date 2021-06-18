@@ -14,19 +14,23 @@ class InsertarTiempos
         $this->idActividad = $idActividad;
     }
 
+    private function SumaTiempos(){
+        $fecTiempos = $this->fecTiempos;
+        $user = $this->user;
+        $conexion = new conexionDB();
+        $consultahoras = mysqli_query($conexion->EstablecerConexion(),"SELECT SUM(cantHoras) FROM tiempos WHERE fecTiempos = '$fecTiempos' AND user = '$user'");
+        $suma = mysqli_fetch_assoc($consultahoras);
+        return $suma;
+    }
+    
     public function InsertarTiemposModel(){
         $fecTiempos = $this->fecTiempos;
         $cantHoras = $this->cantHoras;
         $user = $this->user;
         $idActividad = $this->idActividad;
         $conexion = new conexionDB();
-
-
         
-        $consultahoras = mysqli_query($conexion->EstablecerConexion(),"SELECT SUM(cantHoras) FROM tiempos WHERE fecTiempos = '$fecTiempos' AND user = '$user'");
-        $suma = mysqli_fetch_assoc($consultahoras);
-
-        $sumaint = intval($suma['SUM(cantHoras)']);//convirtiendo la suma de el query en un entero
+        $sumaint = intval($this->SumaTiempos()['SUM(cantHoras)']);//convirtiendo la suma de el query en un entero
         if ($sumaint == null && $cantHoras < 8) {
             $conexion->EstablecerConexion()->query("INSERT INTO tiempos(fecTiempos, cantHoras, user, idActividad) VALUES('$fecTiempos','$cantHoras','$user','$idActividad')");
         }elseif($sumaint <= 8) {
@@ -38,10 +42,6 @@ class InsertarTiempos
             $mensaje = 'ya no puede marcar mas de 8 horas';
             return $mensaje;
         }
-
-            
-        
-
     }
 }
 
