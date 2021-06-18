@@ -11,6 +11,7 @@ class FuncionesController
         if (isset($_POST['btnIngresarActividad'])) {
             $ingresar = new IngresarActividad($_POST['actividad']);
             $ingresar->InsertActividad();
+            require_once 'views/tblActividades/mensaje.php';
         }
     }
 
