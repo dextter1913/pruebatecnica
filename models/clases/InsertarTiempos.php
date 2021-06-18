@@ -20,7 +20,27 @@ class InsertarTiempos
         $user = $this->user;
         $idActividad = $this->idActividad;
         $conexion = new conexionDB();
-        $conexion->EstablecerConexion()->query("INSERT INTO tiempos(fecTiempos, cantHoras, user, idActividad) VALUES('$fecTiempos','$cantHoras','$user','$idActividad')");
+
+
+        
+        $consultahoras = mysqli_query($conexion->EstablecerConexion(),"SELECT SUM(cantHoras) FROM tiempos WHERE fecTiempos = '$fecTiempos' AND user = '$user'");
+        $suma = mysqli_fetch_assoc($consultahoras);
+
+        $sumaint = intval($suma['SUM(cantHoras)']);//convirtiendo la suma de el query en un entero
+        if ($sumaint == null && $cantHoras < 8) {
+            $conexion->EstablecerConexion()->query("INSERT INTO tiempos(fecTiempos, cantHoras, user, idActividad) VALUES('$fecTiempos','$cantHoras','$user','$idActividad')");
+        }elseif($sumaint <= 8) {
+            $total = $sumaint + $cantHoras;
+            if ($total <= 8 ) {
+                $conexion->EstablecerConexion()->query("INSERT INTO tiempos(fecTiempos, cantHoras, user, idActividad) VALUES('$fecTiempos','$cantHoras','$user','$idActividad')");
+            }
+        }else {
+            return 'Superaste las 8 horas del dia';
+        }
+
+            
+        
+
     }
 }
 

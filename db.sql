@@ -7,6 +7,7 @@ CREATE TABLE Usuarios(
     pass VARCHAR (50) NOT NULL
 );
 INSERT INTO Usuarios(user, pass) VALUES('admin','123');
+INSERT INTO Usuarios(user, pass) VALUES('dextter1913','123');
 CREATE TABLE empleados(
     doc VARCHAR (50) PRIMARY KEY,
     nombre VARCHAR (50) NOT NULL,

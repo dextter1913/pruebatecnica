@@ -21,11 +21,7 @@ class FuncionesController
     {
         $consulta = new MostrarActividad();
         $resultado = $consulta->Consulta();
-        require_once 'views/tblActividades/tbhead.php';
-        while ($row = mysqli_fetch_assoc($resultado)) {
-        require_once 'views/tblActividades/tbBody.php';
-        }
-        require_once 'views/tblActividades/tbfooter.php';
+        require_once 'views/tblActividades/tblActividades.php';
     }
 
     public function InsertarTiemposController($fecha, $horas, $user, $idActividad)
