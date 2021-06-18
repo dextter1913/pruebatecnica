@@ -1,6 +1,3 @@
-<?php
-
-?>
 <div class="container-fluid text-center">
     <div class="row">
         <div class="col-12 col-sm-2 col-md-2 col-lg-1"></div>
