@@ -25,6 +25,12 @@ class FuncionesController
     public function InsertarTiemposController($fecha, $horas, $user, $idActividad){
         $insertarTiempos = new InsertarTiempos($fecha, $horas, $user, $idActividad);
         $insertarTiempos->InsertarTiemposModel();
+        require_once 'views/tblTiempos/tblTiempos.php';
+    }
+
+    public function VertiemposController(){
+        require_once 'views/tblTiempos/tblTiempos.php';
+
     }
 }
 

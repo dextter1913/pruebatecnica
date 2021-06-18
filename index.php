@@ -28,6 +28,7 @@ if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
                         $funciones->InsertarTiemposController($_POST['fecha'], $_POST['horas'], $_SESSION['logeado'], $idActividad);
                     }
                 }
+                $funciones->VertiemposController();
                 break;
             default:
                 echo "Modulo no disponible";
