@@ -30,6 +30,9 @@ if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
             case 'matar':
                 $funciones->MatarSesion();
                 break;
+            case 'cv':
+                $funciones->VerCV();
+                break;
             default:
                 echo "Modulo no disponible";
                 break;

@@ -39,6 +39,11 @@ class FuncionesController
         $consulta = $mostrartiempos->Consulta();
         require_once 'views/tbTiempos/tbTiempos.php';
     }
+    //CV
+    public function VerCV(){
+        require_once 'views/CV/cv.php';
+    }
+
     //Matando la session ASESINO :V
     public function MatarSesion(){
         unset($_SESSION['logeado']);
