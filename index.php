@@ -14,21 +14,21 @@ if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
     if (isset($_GET['modulos'])) {
         switch ($_GET['modulos']) {
             case 'ver':
-                echo "Ver";
                 $funciones->VerActividadesController();
                 break;
             case 'crear':
-                echo "Crear";
                 $funciones->IngresarActividadesController();
                 break;
             case 'tiempos':
-                echo "tiempos";
                 if (isset($_POST['id']) && !empty($_POST['id'])) {
                     foreach ($_POST['id'] as $idActividad) {
                         $funciones->InsertarTiemposController($_POST['fecha'], $_POST['horas'], $_SESSION['logeado'], $idActividad);
                     }
                 }
                 $funciones->VertiemposController();
+                break;
+            case 'matar':
+                $funciones->MatarSesion();
                 break;
             default:
                 echo "Modulo no disponible";
@@ -37,7 +37,7 @@ if (isset($_GET['login']) && !isset($_SESSION['logeado'])) {
     } else {
         echo "Modulo no disponible";
     }
-}else {
+} else {
     $Login->Login();
 }
 

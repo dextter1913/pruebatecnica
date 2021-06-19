@@ -39,4 +39,9 @@ class FuncionesController
         $consulta = $mostrartiempos->Consulta();
         require_once 'views/tbTiempos/tbTiempos.php';
     }
+    //Matando la session ASESINO :V
+    public function MatarSesion(){
+        unset($_SESSION['logeado']);
+        header('Location:index.php');
+    }
 }

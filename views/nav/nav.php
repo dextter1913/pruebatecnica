@@ -16,6 +16,7 @@
                     <a class="nav-link text-white" href="?modulos=tiempos">Tiempos</a>
                 </li>
             </ul>
+            <a href="?modulos=matar" class="nav-link"><button class="btn btn-outline-danger btn-sm d-flex"><i>Matar session</i></button></a>
         </div>
     </div>
 </nav>

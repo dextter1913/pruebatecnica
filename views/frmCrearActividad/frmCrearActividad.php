@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row text-center">
-    <h1 class="text-white">Crear Actividad</h1>
+    <h1>Crear Actividad</h1>
         <div class="col-12 col-sm-4 col-md-4 col-lg-4"></div>
         <div class="col-12 col-sm-4 col-md-4 col-lg-4 shadow p-3 mb-5 bg-body rounded">
             <form action="index.php?modulos=crear" method="post">
