@@ -1,0 +1,6 @@
+Options +FollowSymLinks
+Options -Indexes
+
+RewriteEngine On
+
+RewriteRule ^(\w+)/?$ index.php?modulos=$1
