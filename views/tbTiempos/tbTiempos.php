@@ -23,18 +23,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
+                    <?php
+                    while ($rows = mysqli_fetch_array($consulta)) :
+                    ?>
+                        <tr>
+                            <td>
+                            <?= $rows['idtiempo'] ?>
+                            </td>
+                            <td>
+                            <?= $rows['fecTiempos'] ?>
+                            </td>
+                            <td>
+                            <?= $rows['cantHoras'] ?>
+                            </td>
+                            <td>
+                            <?= $rows['user'] ?>
+                            </td>
+                            <td>
+                            <?= $rows['idActividad'] ?>
+                            </td>
+                        </tr>
+                    <?php
+                    endwhile;
+                    ?>
                 </tbody>
                 <tfoot>
                     <tr>
@@ -49,7 +60,7 @@
 <div class="container text-center">
     <div class="row">
         <h4>
-            <?php 
+            <?php
             if (isset($_SESSION['Error'])) {
                 print $_SESSION['Error'];
                 unset($_SESSION['Error']);

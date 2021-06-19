@@ -32,7 +32,8 @@ class FuncionesController
     }
 
     public function VertiemposController()
-    {
+    {   $mostrartiempos = new MostrarTiempos($_SESSION['logeado']);
+        $consulta = $mostrartiempos->Consulta();
         require_once 'views/tbTiempos/tbTiempos.php';
     }
 }
