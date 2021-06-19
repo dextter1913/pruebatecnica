@@ -8,7 +8,7 @@
             <div class="col-12 col-sm-6 col-md-7 col-lg-7">
                 <h5>
                     <i>
-                        Software Desarrollado por Cristian Aguirre como prueba Tecnica para <a href="https://www.intap.com.co"><i>INTAP SAS</i></a>
+                        Software Desarrollado por Cristian Aguirre como prueba Tecnica para <a href="https://www.intap.com.co" target="__blank"><i>INTAP SAS</i></a>
                     </i>
                 </h5>
             </div>
