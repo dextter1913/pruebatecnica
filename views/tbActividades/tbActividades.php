@@ -11,7 +11,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <form action="index.php?modulos=tiempos" method="post">
+                    <form action="tiempos" method="post">
                         <?php
                         while ($row = mysqli_fetch_assoc($resultado)) :
                         ?>
