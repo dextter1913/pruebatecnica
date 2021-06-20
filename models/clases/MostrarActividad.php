@@ -1,9 +1,14 @@
 <?php 
 require_once 'conexionDB.php';
 class MostrarActividad  
-{
+{   
+    private $user;
+    public function __construct($user) {
+        $this->user = $user;
+    }
     private function Query(){
-        $query = "SELECT * FROM actividades";
+        $user = $this->user;
+        $query = "SELECT * FROM actividades WHERE user = '$user'";
         return $query;
     }
 

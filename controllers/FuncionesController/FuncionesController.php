@@ -12,7 +12,7 @@ class FuncionesController
     {
         require_once 'views/frmCrearActividad/frmCrearActividad.php';
         if (isset($_POST['btnIngresarActividad'])) {
-            $ingresar = new IngresarActividad($_POST['nombreactividad'], $_POST['actividad']);
+            $ingresar = new IngresarActividad($_POST['nombreactividad'], $_POST['actividad'],$_SESSION['logeado']);
             $ingresar->InsertActividad();
             require_once 'views/tbActividades/mensaje.php';
         }
@@ -20,7 +20,7 @@ class FuncionesController
     //Ver actividades
     public function VerActividadesController()
     {
-        $consulta = new MostrarActividad();
+        $consulta = new MostrarActividad($_SESSION['logeado']);
         $resultado = $consulta->Consulta();
         require_once 'views/tbActividades/tbActividades.php';
     }

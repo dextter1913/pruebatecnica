@@ -21,7 +21,10 @@ INSERT INTO empleados(doc, nombre, apellido, telefono, user) VALUES('1035391050'
 CREATE TABLE actividades(
     idActividad INT AUTO_INCREMENT PRIMARY KEY,
     NombreActividad VARCHAR (50) NOT NULL,
-    descripcionActividad TEXT NOT NULL
+    descripcionActividad TEXT NOT NULL,
+    user VARCHAR (50) NOT NULL,
+    INDEX(user),
+    FOREIGN  KEY actividades(user) REFERENCES Usuarios(user)
 );
 CREATE TABLE tiempos(
     idtiempo INT AUTO_INCREMENT PRIMARY KEY,
